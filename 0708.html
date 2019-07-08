@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ex-3</title>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Indie+Flower|Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <style>
+        body {
+            background: #ccc;
+            height: 300vh;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #333;
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            transition: .5s;
+            box-shadow: 0 6px 6px rgb(254, 223, 225);
+            transform: translate(0, -10px);
+        }
+
+        .banner {
+            height: 120px;
+            background: url(images/earth2.jpg);
+            background-size: cover;
+        }
+
+        .card figure {
+            margin: 0 auto;
+            padding: 0;
+            width: 128px;
+            height: 128px;
+            overflow: hidden;
+            border-radius: 50%;
+            /* margin-top:-64px; */
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            margin-left: -64px;
+            /* top: -64px; */
+        }
+
+        .card figure img {
+            width: 100%;
+            transition: .5s;
+            /* 反應完成時間 */
+        }
+
+        .card figure img:hover {
+            transform: scale(1.5);
+            /* 放大，掛圖片 */
+        }
+
+        .content {
+            padding: 50px 20px 20px;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .card h3:hover {
+            letter-spacing: 5px;
+            transition: .5s;
+        }
+
+        .btn:hover {
+            background: #ff5c5c;
+        }
+
+        h3 {
+            font-family: 'Shadows Into Light', cursive;
+            /* 字型 */
+        }
+
+        .transition {
+            transition: all .5s;
+            -webkit-transition: all .5s;
+        }
+
+        figure {
+            width: 120px;
+            height: 120px;
+            background: #C73E3A;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 80px;
+            z-index: 5;
+            margin-left: -60px;
+            background:#8B81C3;
+            background-size: cover;
+        }
+
+        figure .icon {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            left: 3%;
+            top: 35%;
+            z-index: 1;
+            opacity: 0;
+            background-size: 1em 1em;
+
+        }
+
+        figure .icon:hover {
+            transform: scale(1.5);
+        }
+
+        figure:hover img.head {
+            opacity: .5;
+        }
+
+        figure:hover img.icon {
+            opacity: 1;
+        }
+
+        figure img {
+            max-width: 100%;
+        }
+
+        .ring {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .btn1{
+            display: block;
+            text-decoration: none;
+        }
+
+        .btn {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#febbbb+0,fe9090+45,ff5c5c+100;Red+3D+%231 */
+            background: #febbbb;
+            /* Old browsers */
+            background: -moz-linear-gradient(top, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #febbbb 0%, #fe9090 45%, #ff5c5c 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#febbbb', endColorstr='#ff5c5c', GradientType=0);
+            /* IE6-9 */
+            position: relative;
+            transition: all 2s ease-in;
+            -webkit-transition: all 2s ease-in;
+            text-shadow: 0 -1px 0 #000;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 10px;
+            background-color: #554236;
+            /* Old browsers */
+            overflow: hidden;
+        }
+
+        .btn::after {
+            transition: all .5s;
+            -webkit-transition: all .5s;
+            padding: 15px 10px;
+            content: "Follow me";
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(254, 223, 225) 0%, rgba(238, 169, 169) , rgba(232, 122, 144) 100%);
+        }
+
+        .btn:hover {
+            background: #9B90C2;
+        }
+
+        .btn:hover::after {
+            opacity: 0;
+        }
+    </style>
+    
+    <!-- JQ -->
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".btnFollow").click(function ()
+            // click反應
+            {
+                $("#chgicon").attr("src", "images/daredevil.jpg");
+                // 要變更的圖片
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div class="card">
+        <div class="banner">
+        </div>
+        <figure class="ring">
+            <a> <img class="icon transition btnFollow btn1" src="images/picture.svg" alt="" role="button"></a>
+            <img id="chgicon" class="transition head " src="images/dr_strange.jpg" alt="">
+        </figure>
+        <div class="content">
+            <h3>Dr. Strange</h3>
+            <p>hello, I'm Steve Strange.</p>
+            <a href="http://nipponcolors.com/#sakura" target="_blank" role="button" class="btn transition">Follow me</a>
+        </div>
+    </div>
+</body>
+
+</html>
